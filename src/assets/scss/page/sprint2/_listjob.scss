@@ -1,0 +1,84 @@
+.list {
+    &__search {
+        display: flex;
+
+        &-input {
+            width: 35%;
+        }
+
+        &-check {
+            width: 60%;
+        }
+
+        &-add {
+            @extend .list-company__header-btn-add;
+        }
+
+        &-status {
+            cursor: pointer;
+        }
+    }
+
+    &__total {
+        font-weight: 650;
+    }
+
+    &__table {
+        width: 100%;
+
+        tr td {
+            padding-left: 3px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: 1px solid $grayLight;
+        }
+
+        &-number {
+            text-align: center;
+        }
+
+        &-status, &-work {
+            width: 12%;
+        }
+        
+        &-job {
+            width: 40%;
+        }
+
+        &-people, &-apply {
+            width: 10%;
+        }
+
+        &-act {
+            width: 11%;
+        }
+
+        &-view {
+            border: 1px solid $black;
+            background-color: $pinkRed;
+            padding: 5px 7px;
+        }
+
+        &-action {
+            text-align: center;
+        }
+
+        &-copy {
+            position: relative;
+            background-color: $transparent;
+
+            &::before {
+                position: absolute;
+                top: -1px;
+                right: 28px;
+                content: "+";
+                font-size: 35px !important;
+            }
+        }
+
+        &-icon {
+            margin-left: -10px;
+            width: 40px;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+.icon-warning {
+    width: 14px;
+    height: 14px;
+    background-color: $redTomato;
+    @include flexCenter;
+    border-radius: 50%;
+    margin-right: 7px;
+}

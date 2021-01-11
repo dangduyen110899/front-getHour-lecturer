@@ -1,0 +1,61 @@
+    .list-jobcategory {
+
+        &__header {
+            @extend .list-company__header;
+
+            &-btn-add {
+                @extend .list-company__header-btn-add;
+            }
+        }
+        
+        &__add {
+            @include flexCenter;
+            flex-direction: column;
+            // border: 1px solid $gray;
+            align-items: flex-start !important;
+
+            &-name {
+                padding: 15px;
+            }
+
+            &-form {
+                width: 100%;
+                padding: 15px 40px;
+
+                .form-group {
+                    @include alignItems(center);
+                    align-items: baseline !important;
+
+                    .content {
+                      width: 200px !important;
+                    }
+
+                    &__label {
+                        width: 170px;
+                    }
+
+                    &__namejob {
+                        // width: 75%;
+                        outline: none;
+                        height: 40px;
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+
+                    &__desc {
+                        // width: 75%;
+                        outline: none;
+                        height: 40px;
+                    }
+                }
+
+                &__btn {
+                    @include btnCustom($white, $blue, $transparent);
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    float: right;
+                }
+            }
+        }
+    }

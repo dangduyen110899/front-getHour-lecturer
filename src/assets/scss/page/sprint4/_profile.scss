@@ -1,0 +1,141 @@
+.profile {   
+    &__right {
+        width: calc(100% - 270px);
+
+        @include mobile {
+            width: 100%;
+            
+        }
+    }
+
+    &__title {
+        @include fontText(bold, 20px, $blackDark);
+        margin-bottom: 20px;
+
+        &-mobile {
+            @include mobile {
+                display: none;
+            }
+        }
+    }
+
+   &__detail {
+        @include justifyContent(space-between);
+        flex-wrap: wrap;
+
+        @include mobile {
+            justify-content: flex-end;
+        }
+
+        &-notify {
+            border: 1px solid $redTomato;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 25px;
+
+            @include mobile {
+                order: 3;
+                margin: 15px;
+            }
+
+            &__title {
+                @include fontText(bold, 14px, $redTomato);
+            }
+
+            &__text {
+                @include alignItems(center);
+                @include fontText(normal, 14px, $redTomato);
+            }
+        }
+
+        &-point {
+            width: 35%;
+            @include justifyContent(space-around);
+
+            @include mobile {
+                order: 1;
+                width: 65%;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                margin-top: -80px;
+            }
+        }
+
+        &-block {
+            @include justifyContent(center);
+            flex-direction: column;
+            align-items: center;
+
+            &__total {
+                @include fontText(bold, 29px, $blackLight);
+            }
+
+            &__title {
+                @include fontText(normal, 14px, $darkSlateGray);
+            }
+        }
+
+        &-money {
+            width: calc(65%);
+            background-color: $deepSkyBlue;
+            padding: 15px 20px;
+
+            @include mobile {
+                order: 2;
+                width: 100%;
+            }
+
+            &__title {
+                @include fontText(normal, 14px, $white);
+                margin-bottom: 15px;
+            }
+
+            &__total {
+                @include fontText(bold, 27px, $white);
+            }
+        }
+    }
+
+    &__nav-mobile {
+        display: none;
+
+        @include mobile {
+            display: block;
+            
+        }
+
+        .profile__nav-link {
+            padding-left: 15px;
+            padding-right: 15px; 
+            background-color: $bluewhite;
+            border-bottom: 1px solid $grayXLight;
+
+            &:first-child {
+                border-top: 1px solid $grayXLight;
+            }
+
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+
+    &__left-mobile {
+        
+        @include mobile {
+            display: block;
+        }
+    }
+
+    &__notify {
+        padding: 5px 10px;
+        border: 1px solid $deepSkyBlue;
+        border-radius: 3px;
+        @include alignItems(center);
+
+        p {
+            @include fontText(normal, 14px, $deepSkyBlue);
+            margin-left: 10px;
+        }
+    }
+}

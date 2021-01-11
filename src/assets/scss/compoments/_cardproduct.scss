@@ -1,0 +1,84 @@
+.product {
+    box-shadow: 0 3px 8px $shadowProduct;
+    border-radius: 15px;
+
+    &__work {
+        padding-top: 56.25%;
+        position: relative;
+        width: 100%;
+
+        &-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border-radius: 15px 15px 0 0;
+        }
+    }
+
+    &__detail {
+        padding: 20px 25px;
+        background-color: $white;
+
+        &-date {
+            @include alignItems(center);
+
+            &-day {
+                @include fontText(600, 16px, $darkSlateGray);
+                margin-left: 5px;
+            }
+        }
+
+        &-block {
+            margin-top: 20px;
+            display: flex;
+        }
+
+        &-item {
+            font-size: $fontSize-s;
+            @include alignItems(center);
+            background-color: $bluewhite;
+            border-radius: 6px;
+            margin-right: 10px;
+            padding: 0 10px 0 5px;
+
+            &-train {
+                color: $blackLight;
+                margin-left: 7px;
+            }
+        }
+
+        &-des {
+            height: 4.5rem;
+            @include fontText(600, $fontSize-m, $darkSlateGray);
+            margin-top: 15px;
+            @include text-limit-by-line(3, 1.5rem);
+        }
+
+        &-price {
+            margin-top: 5px;
+            @include fontText(600, $fontSize-l, $redTomato);
+        }
+
+        &-smile {
+            background-color: $whiteSkyeBlue;
+        }
+
+        &-moon {
+            background-color: $darkBlueLight;
+        }
+
+        &-gift {
+            background-color: $lightSkyBlue;
+        }
+    }
+
+    &__read {
+        background-color: $white;
+        padding: 20px 25px;
+        @include alignItems(center);
+        justify-content: space-between;
+        border-radius: 0 0 15px 15px;
+    }
+}

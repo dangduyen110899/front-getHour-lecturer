@@ -1,0 +1,95 @@
+@mixin btnCustom($color, $bgColor, $colorBorder) {
+    color: $color;
+    background-color: $bgColor;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid $colorBorder;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin blockValidate($color, $bgColor) {
+    height: 50px;
+    background-color: $bgColor;
+    color: $color;
+    margin-top: 50px;
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin justifyContent($justify) {
+    display: flex;
+    justify-content: $justify;
+}
+
+@mixin alignItems($align) {
+    display: flex;
+    align-items: $align;
+}
+
+@mixin  flexDirection($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin text-limit-by-line($lineNumber, $lineHeight: $base-line-height) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+   /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lineNumber;
+    line-height: $lineHeight;
+    max-height: $lineHeight*$lineNumber;
+    word-break: break-all;
+}
+
+@mixin text-limit-one-line($height) {
+    max-height: $height;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+@mixin fontText($fontWeight, $fontSize, $color) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    color: $color;
+}
+
+@mixin mobile { @media (max-width: #{$tablet-width - 1px}) {     
+    @content;   
+   } 
+  }  
+  
+  @mixin tablet {@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {       
+     @content;   
+   } 
+  }  
+  
+  @mixin desktop { @media (min-width: #{$desktop-width}) {     
+    @content;  
+   } 
+  }
+
+  @mixin sm-moblie { @media (max-width: #{$mobile-width}) {     
+    @content;  
+   } 
+  }
+
+  @mixin tablet-xl { @media (max-width: #{$tablet-xl-width}) {     
+    @content;  
+   } 
+  }
+
+
+  

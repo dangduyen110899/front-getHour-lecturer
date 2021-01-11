@@ -1,0 +1,122 @@
+.popup-login {
+    display: none;
+    position: fixed;
+    width: 430px;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: $white;
+    border-radius: 7px;
+    box-shadow: 0 3px 6px $shadowDate;
+
+    @include mobile {
+        max-width: 325px;
+    }
+
+    &__delete {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 20px;
+        color: $graySilver;
+    }
+
+    &__detail {
+        padding-top: 30px;
+        max-width: 260px;
+        margin: auto;
+    }
+
+    &__name {
+        text-align: center;
+        font-weight: 600;
+        padding-top: 20px;
+    }
+
+    &__box {
+        @include flexDirection(column);
+
+        &-item {
+            font-size: 14px;
+            padding-bottom: 5px;
+            color: $blackLight;
+        }
+
+        &-input {
+            border: 2px solid $graySilver;
+            border-radius: 4px;
+            padding: 5px;
+            margin-bottom: 10px;
+
+            &::placeholder {
+                font-size: 14px;
+            }
+        }
+
+        &-button {
+            margin-left: 0;
+            @include btnCustom($deepSkyBlue, $white, $deepSkyBlue);
+            border: 2px solid $deepSkyBlue;
+            box-shadow: 0 2px 2px $shadowDate;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__link {
+        text-decoration: underline;
+    }
+
+    &__space {
+        margin-top: 25px;
+        position: relative;
+        text-align: center;
+        height: 1px;
+        background-color: $lightgray;
+        width: 100%;
+
+        &-text {
+            position: absolute;
+            display: inline-block;
+            padding: 5px 20px;
+            background-color: $white;
+            font-size: 14px;
+            color: $blackLight;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+    }
+
+    &__line {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        background-color: $white;
+        border: 2px solid $green;
+        width: 100%;
+        color: $green;
+        border-radius: 5px;
+        padding: 10px 0;
+        box-shadow: 0 2px 2px $shadowDate;
+    }
+
+    &__register {
+        border-radius: 0 0 7px 7px;
+        background-color: $bluewhite;
+        padding: 15px 0 25px 0;
+        margin-left: -15px;
+        margin-right: -15px;
+
+        &-btn {
+            max-width: 260px;
+            margin: auto;
+            background-color: $deepSkyBlue;
+            color: $white;
+            width: 100%;
+            font-weight: 500;
+            padding: 15px 0;
+            border-radius: 7px;
+            box-shadow: 0px 2px 2px $shadowDate;
+        }
+    }
+}

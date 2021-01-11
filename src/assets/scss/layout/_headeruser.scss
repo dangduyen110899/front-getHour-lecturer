@@ -1,0 +1,231 @@
+.header {
+    &__top {
+        padding: 20px;
+        @include justifyContent(space-between);
+
+        @include mobile {
+            padding: 15px;
+            box-shadow: 0 3px 6px $shadowDate;
+        }
+    }
+
+    &__logo {
+        @include justifyContent(space-between);
+        align-items: center;
+
+        &-name {
+            font-weight: 900;
+        }
+
+        &-detail {
+            color: $grayDark;
+            font-size: $fontSize-mm;
+
+            @include mobile {
+                display: none;
+            }
+        }
+    }
+
+    &__status {
+        @include justifyContent(space-between);
+
+        &-liked {
+            @include mobile {
+                display: none;
+            }
+        }
+
+        &-like {
+            display: none;
+
+            @include mobile {
+                display: block;
+            }
+        }
+
+        &-menu {
+            display: none;
+
+            @include mobile {
+                @include flexCenter;
+
+                &-icon {
+                    color: $blueOcean;
+                    font-size: 30px;
+                    padding-bottom: 7px;
+                    padding-left: 10px;
+                    cursor: pointer;
+                }
+
+                &-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    z-index: 100;
+                    cursor: pointer;
+                    display: none;
+                }
+
+                &-check {
+                    display: none;
+
+                    &:checked ~ .header__status-menu-box {
+                        transform: translateX(0%);
+                        transition: 0.5s;
+                    }
+
+                    &:checked ~ .header__status-menu-overlay {
+                        display: block;
+                    }
+                }
+
+                &-box {
+                    background-color: $cornFlowerBlue;
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 100;
+                    width: 60%;
+                    transform: translateX(100%);
+                    transition: 0.5s;
+                }
+
+                &-logo {
+                    @include justifyContent(space-between);
+                }
+
+                &-name {
+                    @include fontText(600, 30px, $white);
+                    padding-right: 10px;
+                }
+
+                &-delete {
+                    padding-top: 5px;
+                    color: $redTomato;
+                    padding-left: 10px;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+
+                &-item {
+                    width: 100%;
+                    padding: 10px;
+
+                    &:hover {
+                        background-color: $whiteSkyeBlue;
+                        transition: 0.5s;
+                    }
+                }
+
+                &-link {
+                    color: $white;
+                    width: 100%;
+                }
+            }
+        }
+
+        &-view {
+            .btn-noti__status {
+                border-left: 0;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            @include mobile {
+                display: none;
+            }
+        }
+
+        &-register {
+            @include alignItems(center);
+            margin-left: 35px;
+            padding: 10px 23px;
+            border-radius: 7px;
+            background-color: $deepSkyBlue;
+            border: 2px solid $transparent;
+
+            &-text {
+                color: $white;
+                font-weight: 500;
+            }
+
+            &:hover {
+                transition: 0.5s;
+                background-color: $blueOcean;
+            }
+
+            @include mobile {
+                display: none;
+            }
+        }
+
+        .btn-login {
+            @include mobile {
+                @include flexDirection(column);
+                padding: 10px;
+                border: none;
+
+                &__img {
+                    margin-top: -4px;
+                    margin-right: 0;
+                }
+
+                &__text {
+                    padding-top: 6px;
+                    font-size: $fontSize-ss;
+                }
+            }
+        }
+    }
+
+    &__navbar {
+        min-height: 15px;
+        background-color: $blueOcean;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__nav {
+        &-menu {
+            @include justifyContent(center);
+        }
+
+        &-item {
+            padding: 0 40px;
+        }
+
+        &-link {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            color: $white;
+            display: block;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                height: 2px;
+                width: 0;
+                left: 0;
+                bottom: 10px;
+                background-color: $white;
+            }
+
+            &:hover {
+                color: $white;
+
+                &::after {
+                    width: 100%;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+}

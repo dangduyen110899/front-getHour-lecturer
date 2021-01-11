@@ -1,0 +1,203 @@
+.main-container {
+  min-height: calc(100vh - 210px);
+}
+
+.detail-container {
+  max-width: 900px;
+  margin: 30px auto;
+  border: 1px solid $darkGray;
+  padding: 20px 40px;
+}
+
+.height-container {
+  min-height: calc(100vh - 412px);
+}
+
+.list-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  border: 1px solid $darkGray;
+  padding: 20px 40px;
+}
+
+.user-container {
+  max-width: 1000px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.profile {
+  @include justifyContent(space-between);
+  margin-top: 30px;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &__left {
+    width: 250px;
+
+    @include mobile {
+      display: none;
+      width: 100%;
+    }
+  }
+
+  &__info {
+      @include justifyContent(center);
+      align-items: center;
+      flex-direction: column;
+
+      @include mobile {
+        @include flexDirection(row);
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+      &-avatar {
+          width: 130px;
+          height: 130px;
+          margin-bottom: 25px;
+
+          @include mobile {
+              width: 25vw;
+              height: 25vw;
+          }
+
+          img {
+              border-radius: 50%;
+              width: 100%;
+              height: 100%;
+          }
+      }
+
+      &-detail {
+          text-align: center;      
+          padding-bottom: 35px;
+          border-bottom: 1px solid $lightgray;
+          width: 100%;
+
+          @include mobile {
+              @include flexDirection(row);
+              width: calc(75% - 20px);
+              justify-content: space-around;
+              padding-bottom: 20px;
+              align-items: center;
+          }
+      }
+      
+      &-name {
+              margin-bottom: 10px;
+              @include fontText(bold, 18px, $darkSlateGray);
+
+              @include mobile {
+                  margin-bottom: 0;
+              }
+      }
+
+      &-btn {
+          border: 1px solid $lightgray;
+          margin-left: 0;
+          padding: 5px 20px;
+          @include fontText(normal, 13px, $darkSlateGray);
+          background-color: $white;
+
+          @include mobile {
+              padding: 5px 15px;
+              font-size: 12px;
+          }
+      }
+  }
+
+  &__nav {
+      margin-top: 10px;
+      @include mobile {
+        display: none;
+    }
+
+      &-link {
+          @include justifyContent(space-between);
+          align-items: center;
+          padding-bottom: 10px;
+          padding-top: 10px;
+
+          &__left {
+              @include alignItems(center);
+
+              p {
+                  @include fontText(bold, 14px, $blackLight);
+              }
+          }
+
+          &__right {
+              i {
+                  color: $grayMLight;
+              }
+          }
+      }
+  }
+}
+
+.user-line {
+    height: 1px;
+    background-color: $grayXLight;
+
+    @include mobile {
+        display: none;
+    }
+}
+
+.upload-img {
+    @include flexCenter;
+    text-align: center;
+    flex-direction: column;
+    border: 3px dashed $grayBorder;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 45px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 200px;
+    }
+
+    &__text {
+        @include fontText(normal, 14px, $black);
+        margin-top: 20px;
+    }
+
+    &__title {
+        @include fontText(bold, 24px, $black);
+        margin-top: 10px;
+    }
+
+    &__delete {
+        background-color: transparent;
+        color: $darkRed;
+        font-size: 22px;
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        z-index: 99;
+    }
+}
+
+.nav-btn {
+    @include alignItems(center);
+    justify-content: space-around;
+    @include btnCustom($white, $deepSkyBlue, $transparent);
+    margin: 30px auto;
+
+    &:hover {
+        transition: 0.5s;
+        background-color: #004af8;
+    }
+
+    i {
+        margin-right: -35px;
+    }
+}

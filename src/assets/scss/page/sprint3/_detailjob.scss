@@ -1,0 +1,301 @@
+.detail-job {
+
+    &__slide {
+        // @include justifyContent(space-between);
+        width: 100%;
+
+        .slick-arrow.slick-prev, .slick-arrow.slick-next {
+          display: none !important;
+        }
+
+        .slick-list {
+          width: 100%;
+        }
+
+        .slick-track {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .slick-slide {
+          width: calc((100% / 3) - 7px) !important;
+          margin-left: 10px !important;
+
+          &:nth-child(1) {
+              margin-left: 0 !important;
+          }
+        }
+
+        &-item {
+          padding-top: 56.25%;
+          position: relative;
+        }
+
+        &-img {
+            position: absolute;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        &-desc {
+            @include fontText(normal, 14px, $blackLight);
+        }
+    }
+
+    .product {
+        @include justifyContent(space-between);
+        align-items: flex-start;
+        box-shadow: none;
+        padding-top: 15px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid $lightgray;
+        border-radius: 0;
+
+        @include mobile {
+            flex-direction: column;
+        }
+    
+
+        &__detail {
+        width: 60%;
+        padding: 0;
+
+        @include mobile {
+            width: 100%;
+        }
+
+            &-infor {
+                @include alignItems(center);
+
+                @include mobile {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+
+            &-date {
+            
+                &-day {
+                    font-size: 20px;
+                }
+            }
+
+            &-block {
+                margin-top: 0;
+                margin-left: 20px;
+
+                @include mobile {
+                    margin-top: 20px;
+                    margin-left: 0px;
+                }
+            }
+
+            &-des {
+                height: auto;
+            }
+
+            &-item {
+            
+                &-train {
+                    font-size: 16px;
+                }
+            }
+
+            &-title {
+                font-size: 26px;
+                height: auto;
+
+                @include mobile {
+                    font-size: 22px;
+                }
+            }
+
+            &-price {
+                margin-top: 15px;
+            }
+        }
+
+        .status__item {
+            width: 48px;
+            height: 48px;
+            margin-right: 10px;
+
+            @include mobile {
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+        .product__apply {
+            width: 30%;
+
+            @include mobile {
+                display: none;
+            }
+
+            @include tablet {
+                width: 40%;
+            }
+        }
+
+        &__apply {
+            @include alignItems(center);
+            justify-content: center;
+            flex-wrap:  wrap;
+
+            @include mobile {
+                display: none;
+            }
+
+            &-deadline {
+                @include fontText(bold, 14px, $blueOcean);
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;    
+            }
+
+            &-btn {
+                @include btnCustom($white, $deepSkyBlue, $transparent);
+                padding-top: 15px;
+                padding-bottom: 15px;
+
+                &:hover {
+                    transition: 0.5s;
+                    background-color: $blueOcean;
+                }
+            }
+        }
+    }
+
+    &__box {
+        margin-top: 20px;
+        padding-bottom: 70px;
+
+        @include mobile {
+            padding-bottom: 20px;
+        }
+
+        &-title {
+            @include fontText(bold, 18px, $blackDark);
+        }
+    }
+
+    &__infor {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        &-left {
+            width: calc(50% - 10px);
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+
+        &-right {
+            width: calc(50% - 10px);
+            margin-right: 20px;
+
+            @include mobile {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+
+        &-item {
+            margin-top: 20px;
+            @include alignItems(flex-start);
+            justify-content: space-between;
+        }
+
+        &-title {
+            width: 35%;
+            @include alignItems(center);
+
+            @include sm-moblie {
+                width: calc(35% - 5px);
+            }
+
+            &__icon {
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                @include flexCenter;
+                background-color: $whiteXsmoke;
+            }
+
+            &__text {
+                margin-left: 15px;
+                @include fontText(bold, 16px, $darkSlateGray);
+
+                @include sm-moblie {
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        &-desc {
+            width: 65%;
+            @include flexDirection(column);
+
+            @include sm-moblie {
+                width: calc(65% - 5px);
+            }
+
+            &--pri {
+                @include fontText(bold, 18px, $darkSlateGray);
+            }
+            
+            &--sec {
+                @include fontText(normal, 16px, $darkSlateGray);
+            }
+        }
+
+        &-map {
+            @include btnCustom($white, $deepSkyBlue, $transparent);
+            padding: 5px 15px;
+            width: 160px;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-left: 0;
+            align-items: flex-end;
+
+            &:hover {
+                transition: 0.5s;
+                background-color: $blueOcean;
+            }
+        }
+    }
+
+    &__apply {
+        background-color: $bluewhite;
+        padding: 40px 0;
+
+        @include mobile {
+            box-shadow: 0 -3px 6px $shadowDate;
+            margin-bottom: 15px;
+        }
+        
+
+        .product__apply {
+
+            @include mobile {
+                display: flex;
+            }
+        }
+
+        .product__apply-btn {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+    }
+}

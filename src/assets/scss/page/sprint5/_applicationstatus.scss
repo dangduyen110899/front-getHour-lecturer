@@ -1,0 +1,362 @@
+.status {
+
+    &__nav {
+        @include alignItems(center);
+        border: 1px solid $deepSkyBlue;
+        margin-bottom: 20px;
+
+        &-btn {
+            margin: 0;
+            width: calc(100% / 3);
+            padding: 10px;
+            border-left: 1px solid $deepSkyBlue;
+            background-color: white;
+            border-radius: 0;
+            position: relative;
+            
+            &:first-child {
+                border-left: 0;
+            }
+
+            &--active {
+                color: $white;
+                background-color: $deepSkyBlue;
+            }
+
+            .status-number {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                display: block; 
+                border: 1px solid $black;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: $white;
+                line-height: 18px;
+                color: $black;
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+    }
+
+    &__total {
+        @include fontText(bold, 22px, $black);
+
+
+        &-number {
+            color: $redTomato;
+            display: inline-block;
+            font-size: 30px;
+        }
+    }
+
+    &__box {
+        @include justifyContent(space-between);
+        align-items: flex-end;
+        margin-top: 25px;
+        @include tablet-xl {
+            @include flexDirection(column);
+            align-items: flex-start;
+        }
+
+        &-text {
+            padding-left: 15px;
+            font-size: 14px;
+            @include tablet-xl {
+                margin-bottom: 15px;
+            }
+        }
+
+        &-btn {
+            @include alignItems(center);
+            justify-content: space-between;
+            padding: 20px 10px;
+            background-color: $blueX;
+            border-radius: 20px;
+            @include fontText(bold, 22px, $white);
+        }
+
+        &-selected {
+            margin-right: 30px;
+            margin-left: 30px;
+        }
+
+        &-block  {
+            text-align: left;
+            margin-right: 25px;
+        }
+
+        &-desc {
+            @include fontText(normal, 12px, $golden);
+        }
+
+        i {
+            font-size: 25px;
+            color: rgba($color: $white, $alpha: 0.5);
+            font-weight: normal;
+        }
+    }
+
+    &__like {
+        margin-top: 30px;
+        flex-wrap: wrap;
+        @include justifyContent(flex-start);
+
+        .product {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            width: calc((100% / 3) - (40px / 3));
+            @include desktop {
+                &:nth-child(3n + 1) {
+                    margin-left: 0;
+                }
+            }
+             
+            img {
+                cursor: pointer;
+            }
+
+            @include mobile {
+                width: calc(50% - 10px);
+
+                &:nth-child(2n + 1) {
+                    margin-left: 0;
+                }
+            }
+            @include tablet {
+                width: calc(50% - 10px);
+
+                &:nth-child(2n + 1) {
+                    margin-left: 0;
+                }
+            }
+            &__check {
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                z-index: 2;
+                border: 5px solid $grayLight;
+                background-color: $white;
+                text-align: center;
+                cursor: pointer;
+
+                i {
+                    color: $grayLight;
+                    font-size: 22px;
+                }
+
+                p {
+                    font-size: 7px;
+                    color: $grayLight;
+                }
+            }
+
+            &__work {
+                position: relative;
+
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba($color: $black, $alpha: 0.5);
+                    z-index: 10;
+                    cursor: not-allowed;
+                    justify-content: center;
+                    @include alignItems(center);
+                }
+
+                p {
+                    @include fontText(bold, 20px, $white);
+                }
+            }
+        }
+    }
+
+    &-popup {
+        text-align: center;
+        @include flexDirection(column);
+
+        &__title {
+            font-weight: bold;
+        }
+
+        &__detail {
+            margin-top: 25px;
+            background-color: $bluewhite;
+            @include alignItems(center);
+            padding: 10px;
+            margin-bottom: 25px;
+        }
+
+        &__left {
+            width: 40%;
+        }
+
+        &__img {
+            padding-top: 56.25%;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+            }
+        }
+
+        &__right {
+            width: calc(60% - 15px);
+            font-size: 12px;
+            padding-left: 15px;
+
+            span {
+                font-size: 14px;
+            }
+
+            &-text {
+                @include text-limit-by-line(3, 1.4rem);
+            }
+        }
+
+        &__question {
+            padding-left: 35px;
+            padding-right: 35px;
+        }
+
+        &__btn {
+            width: 100%;
+            margin: 10px auto;
+            width: 230px;
+
+            &--cancel {
+                @include btnCustom($deepSkyBlue, $white, $deepSkyBlue);
+            }
+
+            &--notcancel {
+                @include btnCustom($white, $deepSkyBlue, $transparent);
+            }
+        }
+    }
+}
+
+.product__checkbox:checked ~ .product__check {
+  border: 5px solid $deepSkyBlue;
+
+    i {
+        color: $deepSkyBlue;
+    }
+    p {
+        color: $deepSkyBlue;
+    }
+}
+.product {
+
+    &__icon {
+        display: none;
+    }
+
+    @include mobile {
+        position: relative;
+        margin-top: 20px;
+        width: calc(50% - 6px);
+
+        &:nth-child(2n) {
+            margin-left: 6px;
+            margin-right: 0;
+          }
+
+          &:nth-child(2n-1) {
+            margin-right: 6px;
+            margin-left: 0;
+          }
+
+        &__detail {
+            border-radius: 0 0 15px 15px;
+            padding: 12px;
+
+            &-date{
+                &-img {
+                    width: 11px;
+                }
+
+                &-day {
+                    font-size: $fontSize-s;
+                }
+            }
+
+            &-block {
+                display: inline;
+            }
+
+            &-item {
+                display: inline-flex;
+                padding-right: 10px;
+
+                &-img {
+                    padding-left: 5px;
+                    margin-right: 5px;
+                }
+
+                &-train {
+                    margin-left: 5px;
+                    font-size: 11px;
+                }
+            }
+
+            &-des {
+                font-size: 15px;
+                margin-top: 5px;
+            }
+
+            &-price {
+                font-size: 18px;
+                margin-top: 0;
+            }
+        }
+
+        &__pagination {
+            display: none;
+        }
+
+        &__read {
+            display: none;
+        }
+
+        &__icon {
+            display: block;
+            position: absolute;
+            background-color: transparent;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+        }
+    }
+}
+
+.status {
+    @include mobile {
+        &__item  {
+            padding: 0 0 2px 0;
+            border-radius: 5px;
+
+            &-icon {
+                width: 12px;
+                height: 12px;
+                margin-top: -5px;
+            }
+
+            &-detail {
+                font-size: 5px;
+                padding-top: 0;
+                margin-top: -5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,108 @@
+.create {
+    &__form {
+
+        &-name, &-format {
+            color: $gray;
+        }
+
+        &-des {
+            display: flex;
+            height: 25px;
+        }
+
+        &-item {
+            width: 100%;
+            appearance: none;
+            padding: 5px;
+            
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &-star {
+            font-size: 20px;
+            color: $darkRed;
+        }
+
+        &-sort {
+            width: 100%;
+            position: relative;
+
+            &::after {
+                content: "\25BC";
+                position: absolute;
+                bottom: 5px;
+                right: 5px;
+                pointer-events: none;
+            }
+        }
+
+        &-work {
+            @include justifyContent(space-between);
+            flex-wrap: wrap;
+        }
+
+        &-date{
+            width: calc(50% - 15px);
+        }
+
+        &-input {
+            width: 100%;
+            padding: 4px;
+        }
+
+        &-between {
+            font-size: 20px;
+        }
+
+        &-add {
+            @extend .list-company__header-btn-add;
+        }
+
+        &-status {
+            &-name {
+                cursor: pointer;
+            }
+        }
+
+        &-cancel {
+            text-transform: uppercase;
+            padding-left: 40px;
+            padding-right: 40px;
+            @include btnCustom($white, $gray, $transparent);
+
+            &:hover {
+                @include btnCustom($gray, $white, $gray);
+            }
+        }
+
+        &-button {
+            @include justifyContent(flex-end);
+        }
+
+        &-save {
+            text-transform: uppercase;
+            padding-left: 40px;
+            padding-right: 40px;
+            @include btnCustom($white, $blue, $transparent);
+
+            &:hover {
+                @include btnCustom($blue, $white, $blue);
+            }
+        }
+
+    }
+}
+
+input[type=time]::-webkit-datetime-edit-ampm-field {
+  background-color: #7155d3;
+  border-radius: 15%;
+  color: #fff;
+  padding: 19px 13px;
+  display: none;
+}
+
+input[type=time]::-webkit-datetime-edit-format-field {
+  display: none;
+}

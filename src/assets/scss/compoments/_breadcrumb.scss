@@ -1,0 +1,27 @@
+.user-breadcrumb {
+    @include alignItems(center);
+    list-style-type: none;
+    font-size: 12px;
+    margin-top: 10px;
+
+    @include mobile {
+        display: none;
+    }
+
+    &__link {
+        color: $grayDark;
+        padding-left: 5px;
+        
+        &::after {
+            content: ">";
+            color: $grayDark;
+            padding-left: 5px;
+            padding-right: 5px;
+            cursor: none;
+        }
+    }
+
+    &__current {
+        color: $grayDark;
+    }
+}

@@ -1,0 +1,54 @@
+.admin-header {
+    @include alignItems(center);
+    height: 100px;
+    background-color: $blueLight;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    &__logo {
+            font-size: 35px;
+            font-weight: bold;
+            color: $violet;
+            width: 10%;
+            cursor: default;
+            user-select: none;
+            
+    }
+
+    &__link  {
+        width: 80%;
+    }
+
+    &__name {
+        font-size: 20px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            background-color: $blue;
+        }
+
+        &:hover {
+            &::before {
+                position: absolute;
+                width: 100%;
+                transition: all ease 0.5s;
+            }
+        }
+    } 
+
+    &__btn-logout {
+        @include btnCustom($white, $blue, transparent);
+        width: 7%;
+
+        &:hover {
+            @include btnCustom($blue, $white, $blue);
+            transition: all ease 0.5s;
+        }
+    }
+}

@@ -1,0 +1,80 @@
+.occupation__confirm {
+
+    &-box {
+        width: 100%;
+        @include justifyContent(space-between);
+
+        &-item {
+            width: calc(33.33% - 10px);
+            @include flexCenter;
+            background-color: $grayLight;
+
+            &-img {
+                padding-top: 56.25%;
+                position: relative;
+                width: 100%;
+                margin: 10px;
+    
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    &-status {
+        display: flex;
+    }
+
+    &-title {
+        width: 34%;
+    }
+
+    &-detail {
+        width: 66%;
+    }
+
+    &-button {
+        @include justifyContent(flex-end);
+
+        &-cancel {
+            padding-left: 40px;
+            padding-right: 40px;
+            text-transform: uppercase;
+            @include btnCustom($white, $grayLight, $transparent);
+
+            &:hover {
+                transition: 0.5s;
+                @include btnCustom($grayLight, $white, $black);
+            }
+        }
+
+        &-save {
+            padding-left: 45px;
+            padding-right: 45px;
+            text-transform: uppercase;
+            @include btnCustom($white, $blue, $transparent);
+
+            &:hover {
+                transition: 0.5s;
+                @include btnCustom($blue, $white, $blue);
+            }
+        }
+
+        &-job {
+            padding-left: 30px;
+            padding-right: 30px;
+            text-transform: uppercase;
+            @include btnCustom($white, $golden, $transparent);
+
+            &:hover {
+                transition: 0.5s;
+                @include btnCustom($golden, $white, $golden);
+            }
+        }
+    }
+}

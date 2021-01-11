@@ -1,0 +1,15 @@
+.application {
+    margin-top: 10px;
+
+    &__title {
+        @include fontText(600, 18px, $black);
+    }
+
+    .register__form-agree {
+        @include justifyContent(center);
+    }
+
+    .register__form-btn {
+        margin: 30px auto;
+    }
+}

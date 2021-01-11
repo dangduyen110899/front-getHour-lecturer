@@ -1,0 +1,28 @@
+.profile__certificate{
+    @include justifyContent(flex-start);
+    flex-wrap: wrap;
+    &-btn {
+        @extend .profile__idcard-btn;
+    }
+
+    &-box {
+        width: calc(33% - 10px);
+        margin-left: 10px;
+
+        @include mobile {
+            width: calc(50% - 10px);
+        }
+
+        &:nth-child(3n + 1) {
+          margin-left: 0;
+        }
+    }
+
+    &-add {
+        background-color: transparent;
+        color: $deepSkyBlue;
+        font-size: 36px;
+        width: 100%;
+        @include justifyContent(flex-start);
+    }
+}

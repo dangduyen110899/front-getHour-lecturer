@@ -1,0 +1,30 @@
+.verify-register {
+
+    &__name {
+        @include fontText(600, 18px, $black);
+    }
+
+    &__form {
+        text-align: center;
+        @extend .reset-password__form;
+        @include flexDirection(column);
+
+        &-title {
+            @extend .reset-password__form-title;
+            word-spacing: 5px;
+        }
+
+        &-input {
+            padding: 5px;
+        }
+
+        &-btn {
+            @extend .reset-password__form-btn;
+        }
+
+        &-link {
+            @extend .reset-password__form-btn;
+        }
+
+    }
+}

@@ -1,0 +1,179 @@
+.detail {
+    &__name {
+        @include fontText(700, 30px, $black);
+    }
+
+    &__btn {
+        @include justifyContent(flex-end);
+
+        &-close {
+            @include btnCustom($white, $lightgray, $transparent);
+            padding: 5px 40px;
+
+            &:hover {
+                @include btnCustom($lightgray, $white, $lightgray);
+                padding: 5px 40px;
+                transition: 0.3s;
+            }
+        }
+
+        &-edit, &-save {
+            @include btnCustom($white, $blue, $transparent);
+            padding: 5px 45px;
+
+            &:hover {
+                @include btnCustom($blue, $white, $blue);
+                padding: 5px 45px;
+                transition: 0.3s;
+            }
+        }
+
+        &-cancel {
+            @include btnCustom($white, $gray, $transparent);
+            padding: 5px 40px;
+
+            &:hover {
+                @include btnCustom($gray, $white, $gray);
+                padding: 5px 40px;
+                transition: 0.3s;
+            }
+        }
+    }
+
+    &__pointer {
+        cursor: pointer;
+    }
+
+    &__information {
+        width: 100%;
+        @include justifyContent(space-between);
+
+        &-box {
+            width: calc(50% - 3px);
+        }
+
+        &-image {
+          margin: 30px 7px 30px 0px;
+          position: relative;
+          width: 96%;
+          height: 364px;
+          background-color: #cccc;
+
+            &-img {
+                position: absolute;
+                width: 90%;
+                height: 90%;
+                left: 20px;
+                top: 18px;
+            }
+        }
+
+        &-input {
+          width: 100%;
+          height: 86px;
+          border: 1px solid #333333;
+          padding: 5px 10px;
+          margin-bottom: 8px;
+
+            &-title {
+                width: 100%;
+                color: $grayLight;
+            }
+
+            &-detail {
+                width: 100%;
+                border: none;
+                padding-top: 5px;
+            }
+        }
+    }
+
+    &__certificate {
+        &-name {
+            padding: 10px 0;
+        }
+        &-box {
+            width: 100%;
+            display: inline-flex;
+            flex-wrap: wrap;
+        }
+
+        &-item {
+            background-color: $lightgray;
+            width: 18%;
+            margin-right: 10px;
+        }
+
+        &-image {
+            margin: 8px;
+            width: 100%;
+            padding-top: 56.25%;
+            position: relative;
+
+            &-img {
+                width: 90%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
+    &__personal {
+        &-name {
+            padding: 10px 0;
+        }
+
+        &-infor {
+            display: flex;
+        }
+
+        &-box {
+            width: 25%;
+            background-color: $lightgray;
+
+            &-image {
+                margin: 10px;
+                width: 100%;
+                padding-top: 75%;
+                position: relative;
+            }
+
+            &-img {
+                height: 100%;
+                width: 90%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &-status {
+            margin-left: 20px;
+            @include flexDirection(column-reverse);
+
+            &-appove {
+                color: $blue;
+            }
+
+            &-reject {
+                color: $red;
+            }
+        }
+
+        &-back {
+            padding-left: 40px;
+        }
+    }
+
+    &__status {
+        &-name {
+            padding-top: 10px;
+        }
+    }
+}
+
+input:disabled {
+  background-color: #fff !important;
+}

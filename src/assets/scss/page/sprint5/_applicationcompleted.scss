@@ -1,0 +1,16 @@
+.application {
+    @include flexDirection(column);
+
+    &__text {
+        text-align: center;
+        margin-bottom:10px;
+    }
+
+    &__link {
+        text-align: center;
+    }
+
+    &__btn {
+        width: 350px;
+    }
+}

@@ -1,0 +1,45 @@
+.detail {
+    &__header {
+        @include justifyContent(space-between);
+        
+        &-button {
+            &-copy {
+                text-transform: uppercase;
+                @include btnCustom($black, $white, $black);
+
+                img {
+                    width: 21px;
+                }
+
+                &:hover {
+                    transition: 0.5s;
+                    @include btnCustom($black, $whiteGray, $black);
+                }
+            }
+
+            &-cancel {
+                padding-left: 35px;
+                padding-right: 35px;
+                text-transform: uppercase;
+                @include btnCustom($white, $grayLight, $transparent);
+
+                &:hover {
+                    transition: 0.5s;
+                    @include btnCustom($grayLight, $white, $black);
+                }
+            }
+
+            &-save {
+                padding-left: 40px;
+                padding-right: 40px;
+                text-transform: uppercase;
+                @include btnCustom($white, $blue, $transparent);
+
+                &:hover {
+                    transition: 0.5s;
+                    @include btnCustom($blue, $white, $blue);
+                }
+            }
+        }
+    }
+}
