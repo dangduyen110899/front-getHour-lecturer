@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "4.0.0",
     "@hookform/error-message": "0.0.4",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "antd": "^4.10.2",
     "axios": "^0.21.0",
     "js-cookie": "^2.2.1",
     "node-sass": "^4.14.1",

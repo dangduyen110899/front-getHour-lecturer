@@ -1,9 +1,9 @@
-import TableDataExcel from "pages/TableDataExcel";
+import LayoutAdmin from "pages/admin/Layout";
 
 export const routesAdmin = [
   {
-    path: "/addData",
+    path: "/",
     exact: false,
-    components: TableDataExcel,
+    components: LayoutAdmin,
   }
 ];
