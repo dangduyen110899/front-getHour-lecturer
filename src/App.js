@@ -13,6 +13,7 @@ function App() {
 
   const showRoute = () => {
     const routes = routesAdmin
+
     let result = routes.map((route, index) => {
     return (
       <Route
@@ -22,7 +23,7 @@ function App() {
         component={route.components}
       />
     );
-  })
+    });
 
     return (
       <Router>

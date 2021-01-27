@@ -1,17 +1,14 @@
-import React, {useState, useMemo} from 'react'
+import React from 'react'
 import { Layout, Menu } from 'antd';
 import {
-  UserOutlined,
-  UploadOutlined,
-  VideoCameraOutlined,
+  DatabaseOutlined
 } from '@ant-design/icons';
-import TableDataExcel from './DataTKB/TableDataExcel';
-import FormAddData from './DataTKB/FormAddData';
+import { Link } from 'react-router-dom';
 
 const { Content, Sider } = Layout;
 
-export default function LayoutAdmin() {
-  const [defaultCheck, setDefault] = useState("1")
+export default function LayoutAdmin({children, match}) {
+
   return (
     <Layout>
     <Sider
@@ -23,15 +20,18 @@ export default function LayoutAdmin() {
       }}
     >
       <div className="logo" />
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={[defaultCheck]}>
-        <Menu.Item key="1" icon={<UserOutlined />} onClick={() => setDefault("1")}>
-          Create data
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={[match.match.path==="/admin/tkb" ? "1" : match.match.path==="/admin/kltn" ? "2" : match.match.path==="/admin/lecturer" ? "3" : match.match.path==="/admin/student" ? "4" : "5"]}>
+        <Menu.Item key="1" icon={<DatabaseOutlined />}>
+          <Link to="/admin/tkb">Data tkb</Link>
         </Menu.Item>
-        <Menu.Item key="2" icon={<VideoCameraOutlined />} onClick={() => setDefault("2")}>
-          Data teacher
+        <Menu.Item key="2" icon={<DatabaseOutlined />}>
+          <Link to="/admin/kltn">Data kltn</Link>
         </Menu.Item>
-        <Menu.Item key="3" icon={<UploadOutlined />} onClick={() => setDefault("3")}>
-          nav 3
+        <Menu.Item key="3" icon={<DatabaseOutlined />}>
+          <Link to="/admin/lecturer">Data lecturer</Link>
+        </Menu.Item>
+        <Menu.Item key="4" icon={<DatabaseOutlined />}>
+          <Link to="/admin/student">Data student</Link>
         </Menu.Item>
       </Menu>
     </Sider>
@@ -39,11 +39,7 @@ export default function LayoutAdmin() {
       <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
         <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
         {
-          useMemo(() => {
-            return(
-              defaultCheck==="1" ? <TableDataExcel/> : defaultCheck==="2" ?  <FormAddData/> : "nha3"
-            )
-          }, [defaultCheck])
+          children
         }
         </div>
       </Content>
